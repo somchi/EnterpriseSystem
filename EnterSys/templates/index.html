@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>Manamuz Electric Limited</title>
+   {% include 'link.html' %}
+</head>
+
+<body>
+
+    <!-- start: HEADER -->
+   {% include 'header.html' %}
+    <!-- end: HEADER -->
+    <!-- start: MAIN CONTAINER -->
+    <div class="main-container">
+        <div class="navbar-content">
+            <!-- start: SIDEBAR -->
+            {% include 'sider_bar.html' %}
+
+        <!-- start: PAGE -->
+        <div class="main-content">
+            <!-- start: PANEL CONFIGURATION MODAL FORM -->
+            <div class="modal fade" id="panel-config" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                            <h4 class="modal-title">Panel Configuration</h4>
+                        </div>
+                        <div class="modal-body">
+                            Here will be a configuration form
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Close
+                </button>
+                            <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- end: SPANEL CONFIGURATION MODAL FORM -->
+            <div class="container">
+                <!-- start: PAGE HEADER -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- start: STYLE SELECTOR BOX -->
+                        <div id="style_selector" class="hidden-xs close-style">
+                            <div id="style_selector_container" style="display:block">
+                                <div class="style-main-title">
+                                    Style Selector
+                                </div>
+                                <div class="box-title">
+                                    Choose Your Layout Style
+                                </div>
+                                <div class="input-box">
+                                    <div class="input">
+                                        <select name="layout">
+                    <option value="default">Wide</option>
+                    <option value="boxed">Boxed</option>
+                </select>
+                                    </div>
+                                </div>
+                                <div class="box-title">
+                                    Choose Your Orientation
+                                </div>
+                                <div class="input-box">
+                                    <div class="input">
+                                        <select name="orientation">
+                    <option value="default">Default</option>
+                    <option value="rtl">RTL</option>
+                </select>
+                                    </div>
+                                </div>
+                                <div class="box-title">
+                                    Choose Your Header Style
+                                </div>
+                                <div class="input-box">
+                                    <div class="input">
+                                        <select name="header">
+                    <option value="fixed">Fixed</option>
+                    <option value="default">Default</option>
+                </select>
+                                    </div>
+                                </div>
+                                <div class="box-title">
+                                    Choose Your Footer Style
+                                </div>
+                                <div class="input-box">
+                                    <div class="input">
+                                        <select name="footer">
+                    <option value="default">Default</option>
+                    <option value="fixed">Fixed</option>
+                </select>
+                                    </div>
+                                </div>
+                                <div class="box-title">
+                                    Backgrounds for Boxed Version
+                                </div>
+                                <div class="images boxed-patterns">
+                                    <a id="bg_style_1" href="#"><img alt="" src="assets/images/bg.png"></a>
+                                    <a id="bg_style_2" href="#"><img alt="" src="assets/images/bg_2.png"></a>
+                                    <a id="bg_style_3" href="#"><img alt="" src="assets/images/bg_3.png"></a>
+                                    <a id="bg_style_4" href="#"><img alt="" src="assets/images/bg_4.png"></a>
+                                    <a id="bg_style_5" href="#"><img alt="" src="assets/images/bg_5.png"></a>
+                                </div>
+                                <div class="box-title">
+                                    5 Predefined Color Schemes
+                                </div>
+                                <div class="images icons-color">
+                                    <a id="light" href="#"><img class="active" alt="" src="assets/images/lightgrey.png"></a>
+                                    <a id="dark" href="#"><img alt="" src="assets/images/darkgrey.png"></a>
+                                    <a id="black-and-white" href="#"><img alt="" src="assets/images/blackandwhite.png"></a>
+                                    <a id="navy" href="#"><img alt="" src="assets/images/navy.png"></a>
+                                    <a id="green" href="#"><img alt="" src="assets/images/green.png"></a>
+                                </div>
+                                <div style="height:25px;line-height:25px; text-align: center">
+                                    <a class="clear_style" href="#">
+                Clear Styles
+            </a>
+                                    <a class="save_style" href="#">
+                Save Styles
+            </a>
+                                </div>
+                            </div>
+                            <div class="style-toggle open">
+                                <i class="fa fa-cog fa-spin"></i>
+                            </div>
+                        </div>
+                        <!-- end: STYLE SELECTOR BOX -->
+                        <!-- start: PAGE TITLE & BREADCRUMB -->
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="clip-home-3"></i>
+                                <a href="{% url 'index' %}">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="active">
+                                Dashboard
+                            </li>
+                            <li class="search-box">
+                                <form class="sidebar-search">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Start Searching...">
+                                        <button class="submit">
+                                            <i class="clip-search-3"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </li>
+                        </ol>
+                        <div class="page-header">
+                            <h1>Dashboard <small>overview &amp; stats </small></h1>
+                        </div>
+                        <!-- end: PAGE TITLE & BREADCRUMB -->
+                    </div>
+                </div>
+                <!-- end: PAGE HEADER -->
+                <!-- start: PAGE CONTENT -->
+                {% block content %}
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="core-box">
+                            <div class="heading">
+                                <i class="clip-user-4 circle-icon circle-green"></i>
+                                <h2>Manage Account</h2>
+                            </div>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </div>
+                            <a class="view-more" href="{% url 'employee:e_details' %}">
+                                View More <i class="clip-arrow-right-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="core-box">
+                            <div class="heading">
+                                <i class="clip-clip circle-icon circle-teal"></i>
+                                <h2>Manage Orders</h2>
+                            </div>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </div>
+                            <a class="view-more" href="#">
+                                View More <i class="clip-arrow-right-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="core-box">
+                            <div class="heading">
+                                <i class="clip-database circle-icon circle-bricky"></i>
+                                <h2>View Employees</h2>
+                            </div>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </div>
+                            <a class="view-more" href="{% url 'employee:employees' %}">
+                                View More <i class="clip-arrow-right-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endblock %}
+
+        </div>
+        <!-- end: PAGE -->
+    </div>
+    <!-- end: MAIN CONTAINER -->
+    <!-- start: FOOTER -->
+    <div class="footer clearfix">
+        <div class="footer-inner">
+            <script>
+                document.write(new Date().getFullYear())
+            </script> &copy; clip-one by cliptheme.
+        </div>
+        <div class="footer-items">
+            <span class="go-top"><i class="clip-chevron-up"></i></span>
+        </div>
+    </div>
+    <!-- end: FOOTER -->
+    <!-- start: RIGHT SIDEBAR -->
+    <div id="page-sidebar">
+        <a class="sidebar-toggler sb-toggle" href="#"><i class="fa fa-indent"></i></a>
+        <div class="sidebar-wrapper">
+            <ul class="nav nav-tabs nav-justified" id="sidebar-tab">
+                <li class="active">
+                    <a href="#users" role="tab" data-toggle="tab"><i class="fa fa-users"></i></a>
+                </li>
+                <li>
+                    <a href="#favorites" role="tab" data-toggle="tab"><i class="fa fa-heart"></i></a>
+                </li>
+                <li>
+                    <a href="#settings" role="tab" data-toggle="tab"><i class="fa fa-gear"></i></a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="users">
+                    <div class="users-list">
+                        <h5 class="sidebar-title">On-line</h5>
+                        <ul class="media-list">
+                            <li class="media">
+                                <a href="#">
+                                    <i class="fa fa-circle status-online"></i>
+                                    <img alt="..." src="assets/images/avatar-2.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Nicole Bell</h4>
+                                        <span> Content Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <div class="user-label">
+                                        <span class="label label-success">3</span>
+                                    </div>
+                                    <i class="fa fa-circle status-online"></i>
+                                    <img alt="..." src="assets/images/avatar-3.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Steven Thompson</h4>
+                                        <span> Visual Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <i class="fa fa-circle status-online"></i>
+                                    <img alt="..." src="assets/images/avatar-4.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Ella Patterson</h4>
+                                        <span> Web Editor </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <i class="fa fa-circle status-online"></i>
+                                    <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Kenneth Ross</h4>
+                                        <span> Senior Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <h5 class="sidebar-title">Off-line</h5>
+                        <ul class="media-list">
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-6.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Nicole Bell</h4>
+                                        <span> Content Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <div class="user-label">
+                                        <span class="label label-success">3</span>
+                                    </div>
+                                    <img alt="..." src="assets/images/avatar-7.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Steven Thompson</h4>
+                                        <span> Visual Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-8.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Ella Patterson</h4>
+                                        <span> Web Editor </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-9.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Kenneth Ross</h4>
+                                        <span> Senior Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-10.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Ella Patterson</h4>
+                                        <span> Web Editor </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Kenneth Ross</h4>
+                                        <span> Senior Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-chat">
+                        <div class="sidebar-content">
+                            <a class="sidebar-back" href="#"><i class="fa fa-chevron-circle-left"></i> Back</a>
+                        </div>
+                        <div class="user-chat-form sidebar-content">
+                            <div class="input-group">
+                                <input type="text" placeholder="Type a message here..." class="form-control">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-success" type="button">
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                        <ol class="discussion sidebar-content">
+                            <li class="other">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-4.jpg" alt="">
+                                </div>
+                                <div class="messages">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    </p>
+                                    <span class="time"> 51 min </span>
+                                </div>
+                            </li>
+                            <li class="self">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-1.jpg" alt="">
+                                </div>
+                                <div class="messages">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    </p>
+                                    <span class="time"> 37 mins </span>
+                                </div>
+                            </li>
+                            <li class="other">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-4.jpg" alt="">
+                                </div>
+                                <div class="messages">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="tab-pane" id="favorites">
+                    <div class="users-list">
+                        <h5 class="sidebar-title">Favorites</h5>
+                        <ul class="media-list">
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-7.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Nicole Bell</h4>
+                                        <span> Content Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <div class="user-label">
+                                        <span class="label label-success">3</span>
+                                    </div>
+                                    <img alt="..." src="assets/images/avatar-6.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Steven Thompson</h4>
+                                        <span> Visual Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-10.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Ella Patterson</h4>
+                                        <span> Web Editor </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-2.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Kenneth Ross</h4>
+                                        <span> Senior Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-4.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Ella Patterson</h4>
+                                        <span> Web Editor </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="#">
+                                    <img alt="..." src="assets/images/avatar-5.jpg" class="media-object">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Kenneth Ross</h4>
+                                        <span> Senior Designer </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="user-chat">
+                        <div class="sidebar-content">
+                            <a class="sidebar-back" href="#"><i class="fa fa-chevron-circle-left"></i> Back</a>
+                        </div>
+                        <ol class="discussion sidebar-content">
+                            <li class="other">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-4.jpg" alt="">
+                                </div>
+                                <div class="messages">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    </p>
+                                    <span class="time"> 51 min </span>
+                                </div>
+                            </li>
+                            <li class="self">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-1.jpg" alt="">
+                                </div>
+                                <div class="messages">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    </p>
+                                    <span class="time"> 37 mins </span>
+                                </div>
+                            </li>
+                            <li class="other">
+                                <div class="avatar">
+                                    <img src="assets/images/avatar-4.jpg" alt="">
+                                </div>
+                                <div class="messages">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="tab-pane" id="settings">
+                    <h5 class="sidebar-title">General Settings</h5>
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="checkbox sidebar-content">
+                                <label>
+                                <input type="checkbox" value="" class="green" checked="checked">
+                                Enable Notifications
+                            </label>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="checkbox sidebar-content">
+                                <label>
+                                <input type="checkbox" value="" class="green" checked="checked">
+                                Show your E-mail
+                            </label>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="checkbox sidebar-content">
+                                <label>
+                                <input type="checkbox" value="" class="green">
+                                Show Offline Users
+                            </label>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="checkbox sidebar-content">
+                                <label>
+                                <input type="checkbox" value="" class="green" checked="checked">
+                                E-mail Alerts
+                            </label>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="checkbox sidebar-content">
+                                <label>
+                                <input type="checkbox" value="" class="green">
+                                SMS Alerts
+                            </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="sidebar-content">
+                        <button class="btn btn-success">
+                        <i class="icon-settings"></i> Save Changes
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end: RIGHT SIDEBAR -->
+    <div id="event-management" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                    <h4 class="modal-title">Event Management</h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-light-grey">
+                    Close
+                </button>
+                    <button type="button" class="btn btn-danger remove-event no-display">
+                    <i class='fa fa-trash-o'></i> Delete Event
+                </button>
+                    <button type='submit' class='btn btn-success save-event'>
+                    <i class='fa fa-check'></i> Save
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start: MAIN JAVASCRIPTS -->
+    {% include 'js.html' %}
+    <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<div class="main-navigation navbar-collapse collapse">
+    <!-- start: MAIN MENU TOGGLER BUTTON -->
+    <div class="navigation-toggler">
+        <i class="clip-chevron-left"></i>
+        <i class="clip-chevron-right"></i>
+    </div>
+    <!-- end: MAIN MENU TOGGLER BUTTON -->
+    <!-- start: MAIN NAVIGATION MENU -->
+    <ul class="main-navigation-menu">
+        <li>
+            <!--active open-->
+            <a href="index.html">
+                <i class="clip-home-3"></i>
+                <span class="title"> Dashboard </span><span class="selected"></span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <i class="clip-screen"></i>
+                <span class="title"> Manage Account </span><i class="icon-arrow"></i>
+                <span class="selected"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{% url 'employee:e_details' %} ">
+                        <span class="title"> View Profile </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'employee:e_details' %}" >
+                        <span class="title"> View Payments </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'employee:request' user.pk %}" >
+                        <span class="title"> Make request </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'employee:complain' user.pk %}" >
+                        <span class="title"> Make Complain </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <i class="clip-cog-2"></i>
+                <span class="title"> Manage Employees </span><i class="icon-arrow"></i>
+                <span class="selected"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{% url 'employee:add_employee' %}">
+                        <span class="title"> Add employee </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'finance:pay_process' %}">
+                        <span class="title"> Process Payroll </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="title"> Promote Employee  </span>
+
+                </li>
+                <li>
+                    <a href="{% url 'employee:employees' %}">
+                        <span class="title"> View employee </span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <i class="clip-grid-6"></i>
+                <span class="title"> Employee Benefits </span><i class="icon-arrow"></i>
+                <span class="selected"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="table_static.html">
+                        <span class="title">Employee Loan</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <i class="clip-pencil"></i>
+                <span class="title"> Marketing and Sales </span><i class="icon-arrow"></i>
+                <span class="selected"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{% url 'marketing:demand-list' %}">
+                        <span class="title"> Sales</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'operation:products' %}">
+                        <span class="title"> Inventory </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'marketing:customers' %}">
+                        <span class="title"> Customers </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <i class="clip-file"></i>
+                <span class="title"> Store </span><i class="icon-arrow"></i>
+                <span class="selected"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                   <a href="{% url 'operation:products' %}">
+                        <span class="title"> Inventory </span>
+                    </a>
+                </li>
+                </li>
+                <li>
+                    <a href="{% url 'marketing:demand-list' %}">
+                        <span class="title"> Sales </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <i class="clip-attachment-2"></i>
+                <span class="title">Operation</span><i class="icon-arrow"></i>
+                <span class="selected"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="{% url 'operation:specification' %}">
+                        <span class="title">Manage Products </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'operation:products' %}">
+                        <span class="title"> Inventory </span>
+                        <span class="badge badge-new">new</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="utility_lock_screen.html">
+                        <span class="title"> Report </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="maps.html">
+                <i class="clip-location"></i>
+                <span class="title">Administrator's Page</span>
+                <span class="selected"></span>
+            </a>
+        </li>
+    </ul>
+    <!-- end: MAIN NAVIGATION MENU -->
+</div>

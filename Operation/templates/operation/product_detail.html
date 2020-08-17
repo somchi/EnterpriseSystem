@@ -1,0 +1,125 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% load thumbnail %}
+{% block content %}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- start: BUTTONS PANEL -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-external-link-square"></i> Actions
+                                <div class="panel-tools">
+                                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                                    </a>
+                                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-link panel-refresh" href="#">
+                                        <i class="fa fa-refresh"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                                        <i class="fa fa-resize-full"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-link panel-close" href="#">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="panel-body buttons-widget">
+                                <p>
+                                    <a  href="{% url 'employee:export_employee' %}">
+                                        <button type="button" class="btn btn-success">
+                                            <i class="fa fa-arrow-circle-o-right"></i> Export Sales
+                                        </button>
+                                    </a>
+                                    <a  href="{% url 'marketing:production' %}">
+                                        <button type="button" class="btn btn-primary">
+                                           <i class="fa fa-plus"></i> Add Stock
+                                        </button>
+                                    </a>&nbsp;
+                                    <a href="">
+                                        <button type="button" class="btn btn-blue">
+                                            Upload Sales <i class="fa fa-arrow-right"></i>
+                                        </button>
+                                    </a>
+                                </p>
+                                <h3>Generate Report </h3>
+                                <form action="{% url 'marketing:sale_sum' %}" method="get">
+                                    <input type="date" name="start_date">
+                                    <input type="date" name="end_date">
+                                    <input type="submit" value="search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- start: TABLE WITH IMAGES PANEL -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-external-link-square"></i> Total Available {{ product.name }} {{ inventory }}
+                <div class="panel-tools">
+                    <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                    </a>
+                    <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <a class="btn btn-xs btn-link panel-refresh" href="#">
+                        <i class="fa fa-refresh"></i>
+                    </a>
+                    <a class="btn btn-xs btn-link panel-expand" href="#">
+                        <i class="fa fa-resize-full"></i>
+                    </a>
+                    <a class="btn btn-xs btn-link panel-close" href="#">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date Brought</th>
+                            <th>Quantity Brought</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for goods in product.goods_set.all %}
+                        <tr>
+                            <td>{{ goods.date_produced }}</td>
+                            <td>{{ goods.quantity_produced }}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>Total {{ product.name }} Brought</td>
+                            <td>{{ goods }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date Sold</th>
+                            <th>Quantity Sold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for demands in product.demands_set.all %}
+                        <tr>
+                            <td>{{ demands.date_sold }}</td>
+                            <td>{{ demands.quantity }}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>Total {{ product.name }} Sold</td>
+                            <td>{{ demand }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end: TABLE WITH IMAGES PANEL -->
+    </div>
+</div>
+{% endblock %}

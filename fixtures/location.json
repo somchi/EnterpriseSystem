@@ -1,0 +1,260 @@
+    {
+        "pk": 1, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Abia",
+            "address": ""
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Adamawa"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Akwa Ibom"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Anambra"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Bauchi"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Bayelsa"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Benue"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Borno"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Cross River"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Delta"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Ebonyi"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Edo"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Ekiti"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Enugu"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "Employee.Location", 
+        "fields": {
+            "name": "Federal Capital Territory"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Gombe"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Imo"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Jigawa"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Kaduna"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Kano"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "Employee.Location",
+        "fields": { 
+            "name": "Katsina"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Kebbi"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "Employee.Location", 
+        "fields": { 
+            "name": "Kogi"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Kwara"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "Employee.Location", 
+        "fields": { 
+            "name": "Lagos"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Nasarawa"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "Employee.Location",
+        "fields": { 
+            "name": "Niger"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Ogun"
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Ondo"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "Employee.Location",
+        "fields": { 
+            "name": "Osun"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Oyo"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Plateau"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Rivers"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "Employee.Location",
+        "fields": { 
+            "name": "Sokoto"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "Employee.Location",
+        "fields": { 
+            "name": "Taraba"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "Employee.Location",
+        "fields": {
+            "name": "Yobe"
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "Employee.Location",
+        "fields": { 
+            "name": "Zamfara"
+        }
+    }, 

@@ -1,0 +1,79 @@
+[    
+    {
+        "pk": 1, 
+        "model": "Employee.Position", 
+        "fields": {
+            "description": "",  
+            "name": "CEO"
+        }
+    }, 
+    {
+        "pk": 2,
+        "model": "Employee.Position", 
+        "fields": {
+            "description": "",  
+            "name": "Director Engineering"
+        }
+    }, 
+    {
+        "pk": 3,
+        "model": "Employee.Position", 
+        "fields": {
+            "description": "",  
+            "name": "Director Finance"
+        }
+    }, 
+    {
+        "pk": 4,
+        "model": "Employee.Position", 
+        "fields": {
+            "description": "",  
+            "name": "Director HR"
+        }
+    }, 
+    {
+        "pk": 5,
+        "model": "Employee.Position", 
+        "fields": {
+            "description": "",  
+            "name": "Director Marketing and Sales"
+        }
+    }, 
+    {
+        "pk": 6,
+        "model": "Employee.Position", 
+        "fields": {
+            "description": "",  
+            "name": "Director Media and Publicity"
+        }
+    }, 
+    {
+        "pk": 7,
+        "model": "Employee.Position", 
+        "fields": {
+            "description": "",  
+            "name": "Director Operations"
+        }
+    },
+    {
+        "pk": 1, 
+        "model": "Employee.Unit", 
+        "fields": {  
+            "name": "Corporate HQ"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "Employee.Unit", 
+        "fields": { 
+            "name": "Business Development"
+        }       
+    }, 
+    {
+        "pk": 3, 
+        "model": "Employee.Unit", 
+        "fields": {
+            "name": "Human Resources"
+      }  
+  }
+]

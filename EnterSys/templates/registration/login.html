@@ -1,0 +1,63 @@
+<div id="contact">
+    <div class="line">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="margin">
+            <!-- start: LOGIN BOX -->
+            <div class="col-md-6">
+                {% if form.errors %}
+                    <p>Your username and password didn't match. Please try again.</p>
+                {% endif %}
+                {% if next %}
+                    {% if user.is_authenticated %}
+                        <p>Your account doesn't have access to this page. To proceed,
+                            please login with an account that has access.
+                        </p>
+                    {% else %}
+                        <p>Please login to see this page.</p>
+                    {% endif %}
+                {% endif %}
+                <h6>Sign in to your account</h6>
+                <p>
+                    Please enter your name and password to log in.
+                </p>
+                <form class="form-login" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div style="display: block;" class="errorHandler alert alert-danger no-display">
+                        <i class="fa fa-remove-sign"></i> You username and password do not match. Please correct and submit again.
+                    </div>
+                    {% endif %}
+                    <fieldset>
+                    <div class="form-group">
+                        <span class="input-icon">
+                            {{ form.username }}
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                        <br>
+                    <div class="form-group">
+                        <span class="input-icon">
+                           {{ form.password }}
+                        </span>
+                        <div>
+                            <p class="fa fa-lock">
+                                <a class="forgot" href="?box=forgot">
+                                    I forgot my password
+                                </a>
+                            </p>
+                            <p>Don't have an account <span class="glyphicon glyphicon-log-in"></span><a href=""> Signup</a></p>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-bricky pull-right">
+                            Login <i class="fa fa-arrow-circle-right"></i>
+                        </button>
+                        <input type="hidden" name="next" value="{{ next }}" />
+                        <br>
+                    </div>
+                    </fieldset>
+                </form>
+     </div>
+        </div>
+    </div>
+</div>

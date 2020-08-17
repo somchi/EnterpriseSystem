@@ -1,0 +1,30 @@
+[
+    {
+        "pk": 2, 
+        "model": "Employee.EmployeeType", 
+        "fields": {
+            "name": "Contract"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "Employee.EmployeeType",  
+        "fields": {
+            "name": "IT"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "Employee.EmployeeType",  
+        "fields": {
+            "name": "NYSC"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "Employee.EmployeeType",  
+        "fields": {
+            "name": "Permanent"
+        }
+    }
+]
