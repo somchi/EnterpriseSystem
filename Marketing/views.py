@@ -7,7 +7,7 @@ import urllib.request
 import csv
 from django.utils.dateparse import parse_datetime
 from django.db.models import Sum, Count
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 import xlwt
 from Employee.excel import ExcelReport
 from xlwt import Workbook, easyxf

@@ -118,7 +118,7 @@ class MarkdownEditorWidget(widgets.Textarea):
         return mark_safe(u''.join(out))
 
 
-class RatingFieldRenderer(widgets.RadioFieldRenderer):
+class RatingFieldRenderer(widgets.RadioSelect):
     """Custom rendering for the RadioSelect so it works better with our javascript."""
 
     def __iter__(self):

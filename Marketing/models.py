@@ -11,15 +11,15 @@ SEX_CHOICES = (
     ('F', 'Female'),
 )
 class prod_produce(models.Model):
-    product = models.ForeignKey(Product)
-    quantity_pro = models.ForeignKey(Goods)
-    production_date = models.ForeignKey(Goods('date_produced'), related_name="date")
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity_pro = models.ForeignKey(Goods, on_delete=models.CASCADE)
+    production_date = models.ForeignKey(Goods('date_produced'), related_name="date", on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Product Produced"
 
 class Production(models.Model):
-    product = models.ForeignKey(Product)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity_pro = models.CharField(max_length=50)
     date_created = models.DateField(editable=False, auto_now_add=True)
 
@@ -37,9 +37,9 @@ class Customers(models.Model):
         return self.customer_name        
         
 class Demands(models.Model):
-    product = models.ForeignKey(Product)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
-    customer = models.ForeignKey(Customers, null=True)
+    customer = models.ForeignKey(Customers, null=True, on_delete=models.CASCADE)
     date_sold = models.DateField(blank=True, null=True)
     product_price = models.DecimalField(default=0, max_digits=8, decimal_places=2)
     date_created = models.DateTimeField(editable=False, auto_now_add=True)
@@ -59,8 +59,8 @@ class Demands(models.Model):
         return self.customer
        
 class Sale(models.Model):
-    customer = models.ForeignKey(Customers)
-    product = models.ForeignKey(Product)
+    customer = models.ForeignKey(Customers, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     date_sold = models.DateTimeField(auto_now_add=True, auto_now=False)
     product_price = models.DecimalField(default=0, max_digits=8, decimal_places=2)

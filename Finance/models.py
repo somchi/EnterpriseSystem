@@ -1,10 +1,10 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
-from django.db.models import permalink
 from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
 from Employee.models import Employee, Position, Unit, PayType
 from django.db import models, transaction
+from django.urls import reverse
 
 
 class Batch(models.Model):
@@ -26,8 +26,8 @@ class Batch(models.Model):
     status = models.PositiveIntegerField(choices=STATUS_OPTIONS, default=PROCESSED, editable=False)
     transaction_date = models.DateTimeField(default=datetime.now, editable=False)
     post_date = models.DateTimeField(blank=True, null=True)
-    processed_by = models.ForeignKey(User, editable=False)
-    modified_by = models.ForeignKey(User, editable=False, null=True, blank=True, related_name='batches_modified')
+    processed_by = models.ForeignKey(User, editable=False, on_delete=models.CASCADE)
+    modified_by = models.ForeignKey(User, editable=False, null=True, blank=True, related_name='batches_modified', on_delete=models.CASCADE)
     employees = models.ManyToManyField('Employee.Employee', through='EmployeePaySummary')
     remarks = models.TextField(blank=True)
 
@@ -48,9 +48,8 @@ class Batch(models.Model):
             self.process_to.strftime('%d-%b-%Y'),
         )
 
-    @permalink
     def get_absolute_url(self):
-        return ('pay_batch_detail', (), {'id': self.pk})
+        return reverse('pay_batch_detail', (), {'id': self.pk})
 
     @property
     def get_is_processed(self):
@@ -63,10 +62,10 @@ class EmployeePaySummary(models.Model):
     total_entitlements and total_deductions help to denormalize for ease of
     obtaining net and gross pay for each employee in the batch
     """
-    batch = models.ForeignKey(Batch, related_name='employee_pay_summary')
-    employee = models.ForeignKey(Employee, related_name='employee_pay_summary')
-    position = models.ForeignKey(Position)
-    unit = models.ForeignKey(Unit)
+    batch = models.ForeignKey(Batch, related_name='employee_pay_summary', on_delete=models.CASCADE)
+    employee = models.ForeignKey(Employee, related_name='employee_pay_summary', on_delete=models.CASCADE)
+    position = models.ForeignKey(Position, on_delete=models.CASCADE)
+    unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
     total_entitlements = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
 
@@ -105,7 +104,7 @@ class PayItem(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
     category = models.PositiveIntegerField(choices=PAY_CATEGORIES)
-    pay_type = models.ForeignKey(PayType)
+    pay_type = models.ForeignKey(PayType, on_delete=models.CASCADE)
     account_number = models.CharField(max_length=50, blank=True)
 
     class Meta:
@@ -121,7 +120,7 @@ class ProcessedPayItem(models.Model):
     info on the processed amount for each pay item per employee
     can either be entitlements or deductions (PAY_CATEGORIES)
     """
-    summary = models.ForeignKey(EmployeePaySummary, related_name='processed_pay_items')
+    summary = models.ForeignKey(EmployeePaySummary, related_name='processed_pay_items', on_delete=models.CASCADE)
     pay_item = models.CharField(max_length=100)
     category = models.PositiveIntegerField(choices=PayItem.PAY_CATEGORIES)
     amount = models.DecimalField(max_digits=12,decimal_places=2)
@@ -138,8 +137,8 @@ class ProcessedPayItem(models.Model):
 
 
 class BatchPayType(models.Model):
-    batch = models.ForeignKey(Batch, related_name="pay_types")
-    paytype = models.ForeignKey(PayType, related_name='batch_paytypes')
+    batch = models.ForeignKey(Batch, related_name="pay_types", on_delete=models.CASCADE)
+    paytype = models.ForeignKey(PayType, related_name='batch_paytypes', on_delete=models.CASCADE)
 
 
     class Meta:

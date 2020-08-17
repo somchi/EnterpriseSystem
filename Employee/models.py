@@ -77,7 +77,7 @@ class Position(models.Model):
 
 
 class Employee(models.Model):
-    user = models.OneToOneField(User, related_name='employee')
+    user = models.OneToOneField(User, related_name='employee', on_delete=models.CASCADE)
     staff_id_number = models.CharField(max_length=30, unique=True, blank=True)
     photo = models.ImageField(upload_to='employees/photo/', blank=True)
     title = models.PositiveIntegerField(choices=EMPLOYEE_TITLES, blank=True, null=True)
@@ -86,12 +86,12 @@ class Employee(models.Model):
     birth_date = models.DateField(blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True)
     address = models.TextField(blank=True)
-    position = models.ForeignKey(Position, related_name='employees')
-    unit = models.ForeignKey(Unit, related_name='employees')
+    position = models.ForeignKey(Position, related_name='employees', on_delete=models.CASCADE)
+    unit = models.ForeignKey(Unit, related_name='employees', on_delete=models.CASCADE)
     hire_date = models.DateField()
     salary = models.DecimalField(verbose_name='Gross pay', max_digits=14, decimal_places=2, blank=True, null=True)
-    employee_type = models.ForeignKey(EmployeeType, blank=True, null=True)
-    bank = models.ForeignKey(Bank, blank=True, null=True)
+    employee_type = models.ForeignKey(EmployeeType, blank=True, null=True, on_delete=models.CASCADE)
+    bank = models.ForeignKey(Bank, blank=True, null=True, on_delete=models.CASCADE)
     monthly_pay = models.CharField(max_length=10, blank=True)
     bank_account_number = models.CharField(max_length=20, blank=True)
     maiden_name = models.CharField(max_length=50, blank=True)
@@ -102,10 +102,10 @@ class Employee(models.Model):
     national_id_number = models.CharField(max_length=50, blank=True)
     passport_number = models.CharField(max_length=20, blank=True)
     permanent_address = models.TextField(blank=True)
-    state_of_residence = models.ForeignKey('State.State')
-    country = models.ForeignKey('State.Country', related_name='employee_country', blank=True)
-    state_of_origin = models.ForeignKey('State.State', related_name='employees_origin', blank=True)
-    lga = models.ForeignKey('State.LGA', related_name='employees', blank=True)
+    state_of_residence = models.ForeignKey('State.State', on_delete=models.CASCADE)
+    country = models.ForeignKey('State.Country', related_name='employee_country', blank=True, on_delete=models.CASCADE)
+    state_of_origin = models.ForeignKey('State.State', related_name='employees_origin', blank=True, on_delete=models.CASCADE)
+    lga = models.ForeignKey('State.LGA', related_name='employees', blank=True, on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
 
 
@@ -165,23 +165,23 @@ class PayType(models.Model):
         return self.frequency * self.MULTIPLIERS[self.duration]
 
 class request(models.Model):
-    employee = models.ForeignKey(Employee, editable=False)
-    created_by = models.ForeignKey(User, editable=False, null=True)
+    employee = models.ForeignKey(Employee, editable=False, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, editable=False, null=True, on_delete=models.CASCADE)
     request = models.TextField()
     start_date = models.DateField(blank=True)
     end_date = models.DateField(blank=True)
-    substitute = models.ForeignKey(Employee, blank=True, related_name="employeerequest")
+    substitute = models.ForeignKey(Employee, blank=True, related_name="employeerequest", on_delete=models.CASCADE)
     date_created = models.DateField(editable=False, auto_now_add=True)
 
 class complain(models.Model):
-    employee = models.ForeignKey(Employee, editable=False)
-    created_by = models.ForeignKey(User, editable=False, null=True)
+    employee = models.ForeignKey(Employee, editable=False, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, editable=False, null=True, on_delete=models.CASCADE)
     complain_suggestion = models.TextField()
     date_created = models.DateField(editable=False, auto_now_add=True)
 
 class Chat(models.Model):
     created = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.CharField(max_length=200)
 
     def __str__(self):
